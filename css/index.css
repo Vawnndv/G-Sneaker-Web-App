@@ -13,6 +13,8 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 40px;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 h2 {
@@ -21,31 +23,62 @@ h2 {
 
 .shoes-section {
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value (0.8) for the desired transparency */
+    background-color: #FFFFFF;
+    width: 360px;
+    overflow: hidden;
+}
+
+.shoes-section h2 {
+    margin: 20px;
+}
+
+.section-img {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 50px;
+    height: 25px;
 }
 
 .shoes-list {
     display: flex;
     flex-wrap: wrap;
-    overflow: auto;
-    max-height: 500px; /* Adjust the max-height value as needed */
+    max-height: 450px;
+    overflow-y: scroll;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
 }
 
 .shoe-item {
     width: 300px;
     margin: 20px;
     padding: 10px;
-    background-color: #FFFFFF;
     border-radius: 5px;
 }
 
-.shoe-item img {
+.image-container img {
     max-width: 100%;
+    border-radius: 20px;
+    margin-left: -20px;
     height: auto;
+    width: auto;
+    transform: rotate(-30deg);
+    margin-bottom: 10px;
+}
+
+.image-container {
+    max-width: 100%;
+    border-radius: 20px;
+    height: auto;
+    width: auto;
+    margin-bottom: 10px;
 }
 
 .shoe-item h3 {
     margin-top: 0;
+}
+
+.shoe-item p {
+    text-align: left;
 }
 
 .price {
@@ -56,21 +89,32 @@ h2 {
     display: block;
     margin-top: 10px;
     padding: 8px 16px;
-    background-color: #303841;
-    color: #FFFFFF;
+    background-color: #F6C90E;
+    color: #303841;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
 }
 
+.add-to-cart:hover {
+    background-color: #FFD700;
+    color: #FFFFFF;
+}
+
 .cart-items {
-    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 450px;
+    overflow-y: scroll;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 30px;
+    justify-items: center;
 }
 
 .cart-item {
@@ -82,14 +126,27 @@ h2 {
     border-radius: 5px;
 }
 
+.circle-image-container {
+    max-width: 100%;
+    border-radius: 150px;
+    height: auto;
+    width: auto;
+    transform: rotate(-30deg);
+    margin-bottom: 10px;
+}
+
 .cart-item img {
     max-width: 80px;
     height: auto;
-    margin-right: 10px;
 }
 
 .cart-item-details h3 {
     margin-top: 0;
+}
+
+.cart-details {
+    margin-left: 20px;
+    width: 200px;
 }
 
 .price {
@@ -97,17 +154,24 @@ h2 {
 }
 
 .quantity {
+    width: 100px;
     display: flex;
     align-items: center;
     margin-top: 5px;
+    justify-content: space-between;
+}
+
+.quantity img {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
 }
 
 .quantity-button {
     background-color: #303841;
     color: #FFFFFF;
     border: none;
-    padding: 5px 8px;
-    border-radius: 5px;
+    border-radius: 100px;
     cursor: pointer;
 }
 
@@ -117,6 +181,12 @@ h2 {
 
 .quantity-number {
     margin: 0 5px;
+}
+
+.edit-cart {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
 }
 
 .remove-item {
@@ -139,11 +209,39 @@ h2 {
 
 .total-price {
     font-weight: bold;
-    margin-left: 5px;
+    margin-right: 20px;
 }
 
 .empty-cart {
     text-align: center;
     font-style: italic;
     margin-top: 20px;
+}
+
+.price-add-to-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-add-to-cart img{
+    width: 30px;
+    background: #F6C90E;
+    border-radius: 100px;
+}
+
+.cart-section {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 360px;
+    overflow: hidden;
+}
+
+.cart-view {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-section h2 {
+    margin: 20px;
 }
