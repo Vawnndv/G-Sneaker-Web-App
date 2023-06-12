@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Shoe Store</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Shoe Store</h1>
+
+        <div class="grid-container">
+            <!-- Part 1: Show each item of shoes -->
+            <section class="shoes-section">
+                <h2>Our Products</h2>
+                <div class="shoes-list"></div>
+            </section>
+
+            <!-- Part 2: Show the cart -->
+            <section class="cart-section">
+                <h2>Your Cart</h2>
+                <div class="cart-items"></div>
+
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="total-price">$0.00</span>
+                </div>
+
+                <div class="empty-cart">
+                    Your cart is empty.
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
 
 </body>
 </html>
