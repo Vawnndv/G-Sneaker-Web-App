@@ -19,6 +19,14 @@ async function fetchShoeData() {
 // Call the fetchShoeData function to retrieve the shoe data
 fetchShoeData();
 
+// Array to store cart items
+let cartItems = [];
+// Retrieving cart items from Local Storage
+const storedCartItems = localStorage.getItem('cartItems');
+if (storedCartItems) {
+    cartItems = JSON.parse(storedCartItems); // Parse storedCartItems if it exists
+}
+
 // Function to generate HTML for a shoe item
 function generateShoeItemHTML(shoe) {
     // Check if the shoe is in the cartItems array
@@ -59,9 +67,6 @@ function populateShoesSection() {
         button.addEventListener('click', addToCart);
     });
 }
-
-// Array to store cart items
-const cartItems = [];
 
 // Function to handle Add to Cart button click
 function addToCart(event) {
@@ -105,6 +110,9 @@ function generateCartItemHTML(shoe) {
 
 // Function to populate the cart section
 function populateCartSection() {
+    // Saving cart items to Local Storage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
     const cartSection = document.querySelector('.cart-section');
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartTotal = document.querySelector('.total-price');
